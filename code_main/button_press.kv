@@ -1,0 +1,19 @@
+<button_press>
+    Label:
+        id:ok
+        text:"Hello !",
+        font_size:50,
+        color:[0.41, 0.42, 0.74, 1],
+        pos_hint:{'x': .0, 'y': .0}
+    Button:
+        id:"ok_button",
+        text:"OKK",
+        font_size:"20sp",
+        background_color:(1, 1, 1, 1),
+        color:(1, 1, 1, 1),
+        size:(32, 32),
+        size_hint:(.25, .1),
+        pos_hint:{'x': .38, 'y': .3}
+        on_release:root.sure_input()
+        #on_press: root.state_changed()
+'''
