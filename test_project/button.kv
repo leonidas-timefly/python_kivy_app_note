@@ -1,10 +1,16 @@
+#:kivy 1.8.0
+
+<SpecialButton>:
+    canvas:
+        Color:
+            rgba: 1.0, 0.0, 0.0, 1.0
+        Rectangle:
+            pos: self.pos
+            size: (self.size[0]/4, self.size[1]/4)
+
+
+
 <button_press>
-    Label:
-        id:ok
-        text:"Hello !",
-        font_size:50,
-        color:[0.41, 0.42, 0.74, 1],
-        pos_hint:{'x': .0, 'y': .0}
     Button:
         id:"ok_button",
         text:"OKK",
@@ -14,5 +20,5 @@
         size:(32, 32),
         size_hint:(.25, .1),
         pos_hint:{'x': .38, 'y': .3}
-        on_release:root.sure_input()
+        #on_release:root.sure_input()
         #on_press: root.state_changed()

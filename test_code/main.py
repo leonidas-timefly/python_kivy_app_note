@@ -11,6 +11,9 @@ class AnotherScreen(Screen):
 class ThirdScreen(Screen):
     pass
 
+class ForthScreen(Screen):
+    pass
+
 class ScreenManagement(ScreenManager):
     pass
 

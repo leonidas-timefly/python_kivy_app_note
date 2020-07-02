@@ -1,10 +1,12 @@
 #: import FadeTransition kivy.uix.screenmanager.FadeTransition
 
+
 ScreenManagement:
     transition: FadeTransition()
     MainScreen:
     AnotherScreen:
     ThirdScreen:
+    ForthScreen:
 
 <MainScreen>:
     name: 'main'
@@ -22,8 +24,18 @@ ScreenManagement:
         text: 'go to the third screen'
         font_size: 50
 
+
 <ThirdScreen>:
     name: 'third'
+
+    Button:
+        on_press: app.root.current = 'forth'
+        text: 'go to the forth screen'
+        font_size: 50
+
+
+<ForthScreen>:
+    name: 'forth'
 
     Button:
         on_press: app.root.current = 'main'
