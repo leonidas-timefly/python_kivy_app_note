@@ -6,6 +6,7 @@ from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from reminder_project.database import DataBase
 from kivy.core.window import Window
+from kivy.uix.image import Image, AsyncImage
 
 
 class CreateAccountWindow(Screen):
@@ -77,6 +78,8 @@ class MainWindow(Screen):
         password, name, created = db.get_user(self.current)
         Window.clearcolor = (1, 1, 1, 1)
         sm.current = "chat"
+        img = Image(source="D:\python_project\minder\sources\main_screen.png")
+        return img
         '''
         self.n.text = "Account Name:" + name
         self.email.text = "Email:" + self.current
@@ -85,7 +88,9 @@ class MainWindow(Screen):
 
 
 class ChatWindow(Screen):
-    pass
+    def build(self):
+        img = Image(source='D:\python_project\reminder\resources\main_screen.jpg')
+        return img
 
 
 class ContactWindow(Screen):
