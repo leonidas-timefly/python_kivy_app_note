@@ -77,6 +77,55 @@
                 root.submit()
 
 
+<CustLabel@Label>:
+    color: .761, .190, .810, 1
+
+<ChooseInterests>:
+    name: "choose"
+    orientation: "vertical"
+    padding: 10
+    spacing: 10
+
+    CustLabel:
+        text: "Gender"
+        size_hint_x: 1
+        font_size:20
+
+    # creating box layout
+    BoxLayout:
+        # assigning orentation
+        orientation: "horizontal"
+        height: 20
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_x: .22
+
+            # label creation
+            CustLabel:
+                text: "Male"
+                size_hint_x: .80
+                font_size:30
+            CheckBox:
+                color:.294, .761, .623
+                on_active: root.checkbox_click(self, self.active)
+                size_hint_x: .20
+
+            CustLabel:
+                text: "Female"
+                size_hint_x: .80
+                font_size:20
+            CheckBox:
+                on_active: root.checkbox_click(self, self.active)
+                size_hint_x: .20
+
+            CustLabel:
+                text: "Other"
+                size_hint_x: .80
+                font_size:10
+            CheckBox:
+                on_active: root.checkbox_click(self, self.active)
+                size_hint_x: .20
 
 <LoginWindow>:
     name: "login"
@@ -175,6 +224,11 @@
 <ChatWindow>:
     name: "chat"
     FloatLayout:
+        Image:
+            source: '789.jpg'
+            size_hint: 1, 0.9
+            pos_hint: {'x': 0, 'y': 0.1}
+            allow_stretch: True
         Button:
             pos_hint: {"x": 0, "y": 0}
             size_hint: 0.25, 0.1
@@ -210,6 +264,11 @@
 <ContactWindow>:
     name: "contact"
     FloatLayout:
+        Image:
+            source: '456.jpg'
+            size_hint: 1, 0.9
+            pos_hint: {'x': 0, 'y': 0.1}
+            allow_stretch: True
         Button:
             pos_hint: {"x": 0, "y": 0}
             size_hint: 0.25, 0.1
@@ -245,9 +304,10 @@
     name: "discover"
     FloatLayout:
         Image:
-            source: 'D:\python_project\minder\sources\main_screen.png'
-            size_hint: 1, 1
-            pos_hint: {'x': -.5, 'y': -.5}
+            source: '123.jpg'
+            size_hint: 1, 0.9
+            pos_hint: {'x': 0, 'y': 0.1}
+            allow_stretch: True
         Button:
             pos_hint: {"x": 0, "y": 0}
             size_hint: 0.25, 0.1
@@ -282,6 +342,11 @@
 <MeWindow>:
     name: "me"
     FloatLayout:
+        Image:
+            source: '101.jpg'
+            size_hint: 1, 0.9
+            pos_hint: {'x': 0, 'y': 0.1}
+            allow_stretch: True
         Button:
             pos_hint: {"x": 0, "y": 0}
             size_hint: 0.25, 0.1

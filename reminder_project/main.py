@@ -7,6 +7,7 @@ from kivy.uix.label import Label
 from reminder_project.database import DataBase
 from kivy.core.window import Window
 from kivy.uix.image import Image, AsyncImage
+from kivy.uix.checkbox import CheckBox
 
 
 class CreateAccountWindow(Screen):
@@ -38,6 +39,13 @@ class CreateAccountWindow(Screen):
         self.password.text = ""
         self.namee.text = ""
 
+class ChooseInterests(Screen):
+
+    def checkbox_click(self, instance, value):
+        if value is True:
+            print("Checkbox Checked")
+        else:
+            print("Checkbox Unchecked")
 
 class LoginWindow(Screen):
     email = ObjectProperty(None)
@@ -76,10 +84,9 @@ class MainWindow(Screen):
 
     def on_enter(self, *args):
         password, name, created = db.get_user(self.current)
-        Window.clearcolor = (1, 1, 1, 1)
-        sm.current = "chat"
-        img = Image(source="D:\python_project\minder\sources\main_screen.png")
-        return img
+        #Window.clearcolor = (1, 1, 1, 1)
+        Window.clearcolor = (0, 0, .30, .60)
+        sm.current = "choose"
         '''
         self.n.text = "Account Name:" + name
         self.email.text = "Email:" + self.current
@@ -88,9 +95,7 @@ class MainWindow(Screen):
 
 
 class ChatWindow(Screen):
-    def build(self):
-        img = Image(source='D:\python_project\reminder\resources\main_screen.jpg')
-        return img
+    pass
 
 
 class ContactWindow(Screen):
@@ -129,7 +134,7 @@ kv = Builder.load_file("my.kv")
 sm = WindowManager()
 db = DataBase("users.txt")
 
-screens = [LoginWindow(name="login"), CreateAccountWindow(name="create"), MainWindow(name="main"), ChatWindow(name="chat"), ContactWindow(name="contact"), DiscoverWindow(name="discover"), MeWindow(name="me")]
+screens = [LoginWindow(name="login"), CreateAccountWindow(name="create"), MainWindow(name="main"), ChatWindow(name="chat"), ContactWindow(name="contact"), DiscoverWindow(name="discover"), MeWindow(name="me"), ChooseInterests(name="choose")]
 
 for screen in screens:
     sm.add_widget(screen)
