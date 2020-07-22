@@ -44,8 +44,13 @@ class ChooseInterests(Screen):
     def checkbox_click(self, instance, value):
         if value is True:
             print("Checkbox Checked")
+
         else:
             print("Checkbox Unchecked")
+    def enter(self):
+        sm.current = "chat"
+
+
 
 class LoginWindow(Screen):
     email = ObjectProperty(None)
